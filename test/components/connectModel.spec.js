@@ -15,7 +15,7 @@ describe('connectModel',  () => {
 
     beforeEach(before);
 
-    it('should throw error with zero config',  () => {
+    it('should throw error with zero config', () => {
         try {
             let connect = new ConnectModel({});
         } catch (error) {
@@ -23,7 +23,7 @@ describe('connectModel',  () => {
         }
     });
 
-    it('should create react component',  () => {
+    it('should create react component', () => {
         let connect = new ConnectModel({ sourcePath: '/navigation/model.json' });
         expect(connect instanceof React.Component).to.be(true);
     });
