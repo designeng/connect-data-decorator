@@ -25,14 +25,14 @@ describe('connectModel',  () => {
         try {
             let connection = new connectModel({});
         } catch (error) {
-            assert.equal(error.message, 'Falcor model sourcePath should be provided!');
+            expect(error.message).to.be.a('string');
+            expect(error.message).to.equal('Falcor model sourcePath should be provided!');
         }
     });
 
-    it('should create react component', () => {
+    it('should be an instance of react component', () => {
         let connection = connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
-        
-        expect(connection instanceof React.Component).to.be(true);
+        expect(new connection).to.be.an.instanceof(React.Component);
     });
 
 });
