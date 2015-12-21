@@ -17,7 +17,8 @@ module.exports = function (config) {
       'karma-mocha',
       'karma-sourcemap-loader',
       'karma-webpack',
-      'karma-osx-reporter'
+      'karma-osx-reporter',
+      'karma-mocha-reporter'
     ],
 
     // run the bundle through the webpack and sourcemap plugins
@@ -25,7 +26,7 @@ module.exports = function (config) {
       './tests.bundle.js': [ 'webpack', 'sourcemap' ]
     },
 
-    reporters: [ 'dots', 'osx' ],
+    reporters: [ 'osx', 'mocha' ],
 
     singleRun: false,
 
