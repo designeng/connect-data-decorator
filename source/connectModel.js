@@ -18,7 +18,6 @@ export default function(config) {
 
             constructor(props) {
                 super(props);
-                // this.state = { model: new Falcor.Model(config) };
                 this.state = { model: model };
             }
 

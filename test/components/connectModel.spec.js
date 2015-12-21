@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
 import { expect } from 'chai'; 
 
 import connectModel from '../../source/connectModel';
 
 class NoopComponent extends React.Component {
+    static childContextTypes = {
+        model: PropTypes.object.isRequired
+    };
+
     render() {
         return <div></div>
     }
