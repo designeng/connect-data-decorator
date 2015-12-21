@@ -15,7 +15,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new LiveReloadPlugin()
+        new LiveReloadPlugin({port: 8081})
     ],
     devtool: 'source-map'
 }

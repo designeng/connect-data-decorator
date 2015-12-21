@@ -7,8 +7,6 @@ var FalcorServer = require('falcor-express');
 /* ---- import falcor routers ---- */
 var NavigationRouter    = require('./api/falcor/routers/navigation');
 
-var routers = require('./api/express/routers/index');
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 

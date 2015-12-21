@@ -48,11 +48,7 @@ module.exports = function (config) {
         new webpack.IgnorePlugin(/\.json$/),
         new webpack.NoErrorsPlugin()
       ]
-    },
-
-    // webpackServer: {
-    //   noInfo: true,
-    // }
+    }
 
   });
 };
