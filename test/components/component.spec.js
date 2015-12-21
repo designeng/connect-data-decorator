@@ -3,10 +3,9 @@ import ReactDom from 'react-dom';
 
 import Navigation from '../../example/navigation';
 
-// TODO: root -> this (mocha, es6 ?)
-let root = {}
-
 describe('components rendering',  () => {
+
+    let root = {}
 
     const before = () => {
         root._rootElement = document.createElement("div");
