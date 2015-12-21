@@ -5,9 +5,10 @@ import { expect } from 'chai';
 import connectModel from '../../source/connectModel';
 
 class NoopComponent extends React.Component {
-    static childContextTypes = {
+
+    static contextTypes = {
         model: PropTypes.object.isRequired
-    };
+    }
 
     render() {
         return <div></div>
@@ -42,9 +43,12 @@ describe('connectModel',  () => {
         expect(new connection).to.be.an.instanceof(React.Component);
     });
 
-    xit('should have model in context object', () => {
+    it('should have model in context object', () => {
         let component = new connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
-        expect(component.context).not.to.be.undefined;
+        // component should be mounted?
+        // component.getChildContext();
+        ReactDom.render(<component />, root._rootElement);
+        // expect(component.context).not.to.be.undefined;
     });
 
 });
