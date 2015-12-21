@@ -14,7 +14,7 @@ export default function(config) {
 
     return function(component) {
         const Component = component;
-        return class ConnectModel extends React.Component {
+        return class ConnectModelComponent extends React.Component {
 
             constructor(props) {
                 super(props);
