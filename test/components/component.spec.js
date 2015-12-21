@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import Navigation from '../../src/navigation';
+import Navigation from '../../example/navigation';
 
 // TODO: root -> this (mocha, es6 ?)
 let root = {}
