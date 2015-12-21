@@ -1,5 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Application from './application';
+import Navigation from './navigation'
 
-render(<Application />, document.querySelector('#application'));
+render(<Navigation />, document.querySelector('#navigation'));
