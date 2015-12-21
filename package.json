@@ -40,6 +40,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
+    "karma-osx-reporter": "^0.2.1",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",
