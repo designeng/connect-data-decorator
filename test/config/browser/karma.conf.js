@@ -40,6 +40,9 @@ module.exports = function (config) {
             test: /\.js?$/,
             query: {
               presets: ['es2015', 'stage-0'],
+              plugins: [
+                ['transform-decorators-legacy']
+              ]
             }
           }
         ],
