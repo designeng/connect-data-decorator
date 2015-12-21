@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import Application from '../../src/application';
+import Navigation from '../../src/navigation';
 
 // TODO: root -> this (mocha, es6 ?)
 let root = {}
@@ -16,7 +16,7 @@ describe('components rendering',  () => {
     beforeEach(before);
 
     it('should render application',  () => {
-        ReactDom.render(<Application />, root._rootElement);
-        assert.equal(document.querySelector('#app-wrapper').innerHTML, 'Navigation Component');
+        ReactDom.render(<Navigation />, root._rootElement);
+        assert.equal(document.querySelector('nav').innerHTML, 'TEST');
     });
 });
