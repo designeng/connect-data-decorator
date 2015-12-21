@@ -28,11 +28,19 @@ describe('connectModel',  () => {
             expect(error.message).to.be.a('string');
             expect(error.message).to.equal('Falcor model sourcePath should be provided!');
         }
+
+        // TODO: chai way? - make it work
+        // expect(new connectModel({})).to.throw(new Error('Falcor model sourcePath should be provided!'))
     });
 
     it('should be an instance of react component', () => {
         let connection = connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
         expect(new connection).to.be.an.instanceof(React.Component);
+    });
+
+    xit('should have model in context object', () => {
+        let component = new connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
+        expect(component.context).not.to.be.undefined;
     });
 
 });

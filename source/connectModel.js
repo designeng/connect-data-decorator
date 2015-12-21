@@ -18,14 +18,13 @@ export default function(config) {
 
             constructor(props) {
                 super(props);
-                this.state = { model: new Falcor.Model(config) };
+                // this.state = { model: new Falcor.Model(config) };
+                this.state = { model: model };
             }
 
             static childContextTypes = {
                 model: React.PropTypes.object.isRequired
             };
-
-            static displayName = "Falcor Root (" + (component.displayName || component.name || "Anonymous Component") + ")"
 
             getChildContext() {
                 return { model: this.state.model };
