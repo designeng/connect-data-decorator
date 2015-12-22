@@ -38,7 +38,7 @@ export default function(config) {
                 if (config.getValue) {
                     model.getValue([config.getValue])
                         .then(response => {
-                            this.refs.childComponent.setState({ [config.getValue]: response })
+                            this.refs.childComponent.setState({ [config.getValue]: response });
                         })
                 }
             }
