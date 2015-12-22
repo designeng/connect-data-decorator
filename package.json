@@ -12,7 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "falcor": "0.1.13",
+    "falcor-http-datasource": "0.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.3.15",
@@ -26,9 +28,7 @@
     "body-parser": "^1.14.1",
     "chai": "^3.4.1",
     "express": "^4.13.3",
-    "falcor": "0.1.13",
     "falcor-express": "git://github.com/designeng/falcor-express.git#request-to-context-check-array",
-    "falcor-http-datasource": "0.1.2",
     "falcor-router": "0.2.9",
     "karma": "^0.13.15",
     "karma-chai": "^0.1.0",
