@@ -2,6 +2,10 @@
   "name": "connect-data-decorator",
   "version": "0.0.1",
   "description": "es6 decorator to connect react component to falcor model",
+  "keywords": [
+    "react",
+    "falcor"
+  ],
   "scripts": {
     "build": "webpack --watch --config webpack.config.js",
     "karma-browser": "karma start test/config/browser/karma.conf.js",
