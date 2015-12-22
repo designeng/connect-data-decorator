@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { expect } from 'chai';
 
 import Navigation from '../../example/navigation';
 
-describe('components rendering',  () => {
+describe('rendering', () => {
 
     let root = {}
 
@@ -14,8 +15,8 @@ describe('components rendering',  () => {
 
     beforeEach(before);
 
-    it('should render application',  () => {
+    it('should render navigation component with empty list', () => {
         ReactDom.render(<Navigation />, root._rootElement);
-        assert.equal(document.querySelector('nav').innerHTML, 'TEST');
+        expect(document.querySelector('ul').innerHTML).to.equal('');
     });
 });

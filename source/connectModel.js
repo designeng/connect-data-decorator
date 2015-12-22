@@ -1,7 +1,6 @@
 import Falcor from "falcor";
 import FalcorDataSource from 'falcor-http-datasource';
 import React, { PropTypes } from "react";
-import values from "lodash/object/values";
 
 export default function(config) {
 
@@ -9,7 +8,7 @@ export default function(config) {
         throw new Error('Falcor model sourcePath should be provided!');
     }
 
-    let model = new Falcor.Model({
+    const model = new Falcor.Model({
         source: new FalcorDataSource(config.sourcePath)
     });
 
@@ -35,8 +34,17 @@ export default function(config) {
                 return { model: this.state.model };
             }
 
+            componentWillMount() {
+                if (config.getValue) {
+                    model.getValue([config.getValue])
+                        .then(response => {
+                            this.refs.childComponent.setState({ [config.getValue]: response })
+                        })
+                }
+            }
+
             render() {
-                return <Component {...this.props} />;
+                return <Component {...this.props} ref="childComponent" />;
             }
 
         };
