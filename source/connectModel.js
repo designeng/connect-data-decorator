@@ -1,6 +1,7 @@
 import Falcor from "falcor";
 import FalcorDataSource from 'falcor-http-datasource';
-import React from "react";
+import React, { PropTypes } from "react";
+import values from "lodash/object/values";
 
 export default function(config) {
 
@@ -14,6 +15,11 @@ export default function(config) {
 
     return function(component) {
         const Component = component;
+
+        Component.contextTypes = {
+            model: PropTypes.object.isRequired
+        };
+
         return class ConnectModelComponent extends React.Component {
 
             constructor(props) {

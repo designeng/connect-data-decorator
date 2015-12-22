@@ -1,15 +1,10 @@
 import React, { PropTypes } from 'react';
 import ReactDom from 'react-dom';
-import { expect } from 'chai'; 
+import { expect } from 'chai';
 
 import connectModel from '../../source/connectModel';
 
 class NoopComponent extends React.Component {
-
-    static contextTypes = {
-        model: PropTypes.object.isRequired
-    }
-
     render() {
         return <div></div>
     }
@@ -38,17 +33,15 @@ describe('connectModel',  () => {
         // expect(new connectModel({})).to.throw(new Error('Falcor model sourcePath should be provided!'))
     });
 
-    it('should be an instance of react component', () => {
+    it('instance should be instance of react component class', () => {
         let connection = connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
         expect(new connection).to.be.an.instanceof(React.Component);
     });
 
-    it('should have model in context object', () => {
-        let component = new connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
-        // component should be mounted?
-        // component.getChildContext();
-        ReactDom.render(<component />, root._rootElement);
-        // expect(component.context).not.to.be.undefined;
+    it('instance should have model in state object', () => {
+        const Component = connectModel({ sourcePath: '/navigation/model.json' })(NoopComponent);
+        let component = new Component();
+        expect(component.state.model).not.to.be.null;
     });
 
 });
