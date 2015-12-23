@@ -39,7 +39,8 @@ export default function(config) {
                     model.getValue([config.getValue])
                         .then(response => {
                             this.refs.childComponent.setState({ [config.getValue]: response });
-                        })
+                        },
+                        (error) => console.log("ERROR [connect-data-decorator]: ", error));
                 }
             }
 

@@ -52,6 +52,8 @@ exports.default = function (config) {
                     if (config.getValue) {
                         model.getValue([config.getValue]).then(function (response) {
                             _this2.refs.childComponent.setState(_defineProperty({}, config.getValue, response));
+                        }, function (error) {
+                            return console.log("ERROR [connect-data-decorator]: ", error);
                         });
                     }
                 }
