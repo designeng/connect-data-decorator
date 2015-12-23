@@ -2,10 +2,10 @@ import Falcor from "falcor";
 import FalcorDataSource from 'falcor-http-datasource';
 import React, { PropTypes } from "react";
 
-export default function(config) {
+export default function connectModelDecorator(config) {
 
     if (!config.sourcePath) {
-        throw new Error('Falcor model sourcePath should be provided!');
+        throw new Error('[ERROR connectModelDecorator] Falcor model sourcePath should be provided!');
     }
 
     const model = new Falcor.Model({
